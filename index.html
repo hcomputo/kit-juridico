@@ -329,6 +329,72 @@
             margin-top: 0.2rem;
         }
 
+        /* Derechos Estatales */
+        .rights-banner {
+            background: linear-gradient(145deg, #1a2e1f 0%, #14231a 100%);
+            border: 1px solid rgba(56, 161, 105, 0.32);
+            border-radius: 18px;
+            padding: 2.2rem 1.75rem 2rem;
+            margin: 2.2rem auto 0;
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .rights-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(56, 161, 105, 0.5), transparent);
+        }
+
+        .rights-banner h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            color: var(--text-primary);
+        }
+
+        .rights-badge {
+            width: 150px;
+            height: auto;
+            margin: 0 auto 1.3rem;
+            display: block;
+            filter: drop-shadow(0 8px 22px rgba(56, 161, 105, 0.35));
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .rights-badge:hover {
+            transform: scale(1.04);
+            filter: drop-shadow(0 10px 28px rgba(56, 161, 105, 0.5));
+        }
+
+        .rights-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: var(--success);
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.98rem;
+            text-decoration: none;
+            padding: 0.8rem 1.75rem;
+            border-radius: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .rights-link:hover {
+            background: #2f8a5a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(56, 161, 105, 0.32);
+        }
+
         /* Responsive */
         @media (max-width: 600px) {
             .header {
@@ -369,6 +435,19 @@
             </div>
         </div>
     </header>
+
+    <!-- Derechos Estatales -->
+    <div class="rights-banner">
+        <h2>🔗 Derechos Estatales</h2>
+        <img src="derechos-estatales-badge.png" alt="Derechos Estatales" class="rights-badge">
+        <a href="https://hcomputo.github.io/Derechos-estatales/" target="_blank" class="rights-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10 13a5 5 0 007.07 0l2.83-2.83a5 5 0 00-7.07-7.07l-1.72 1.71"/>
+                <path d="M14 11a5 5 0 00-7.07 0l-2.83 2.83a5 5 0 007.07 7.07l1.71-1.71"/>
+            </svg>
+            Consulta la lista de Los derechos aquí
+        </a>
+    </div>
 
     <!-- Contact Banner -->
     <div class="contact-banner">
