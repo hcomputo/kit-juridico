@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kit Jurídico – Regalo Exclusivo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0f1419;
+            --bg-secondary: #1a2332;
+            --bg-card: #1e2a3a;
+            --bg-hover: #253447;
+            --accent: #c9a227;
+            --accent-light: #e8c547;
+            --text-primary: #f0f4f8;
+            --text-secondary: #a0aec0;
+            --text-muted: #718096;
+            --border: #2d3a4d;
+            --success: #38a169;
+            --whatsapp: #25d366;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            animation: fadeIn 0.7s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1a2332 0%, #0f1419 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 3rem 1.5rem 2.3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        }
+
+        .logo {
+            width: 230px;
+            height: auto;
+            margin: 0 auto 1.2rem;
+            display: block;
+            filter: drop-shadow(0 8px 26px rgba(201, 162, 39, 0.42));
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.03);
+            filter: drop-shadow(0 10px 30px rgba(201, 162, 39, 0.55));
+        }
+
+        .logo-divider {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            margin: 0 auto 1.4rem;
+            border-radius: 2px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(201, 162, 39, 0.15);
+            color: var(--accent);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
+            border: 1px solid rgba(201, 162, 39, 0.3);
+            margin-bottom: 1rem;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 5vw, 2.6rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .header h1 span {
+            color: var(--accent);
+        }
+
+        .header p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Contact Banner */
+        .contact-banner {
+            background: linear-gradient(145deg, #1a3229 0%, #152820 100%);
+            border: 1px solid rgba(37, 211, 102, 0.28);
+            border-radius: 18px;
+            padding: 2rem 1.75rem;
+            margin: 2.2rem auto;
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .contact-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(37, 211, 102, 0.5), transparent);
+        }
+
+        .contact-banner h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            color: var(--text-primary);
+        }
+
+        .contact-banner > p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.4rem;
+            line-height: 1.55;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-whatsapp {
+            background: var(--whatsapp);
+            color: #fff;
+        }
+
+        .btn-whatsapp:hover {
+            background: #1da851;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-email {
+            background: var(--bg-card);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-email:hover {
+            background: var(--bg-hover);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .contact-note {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem 3rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1.25rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--border), transparent);
+        }
+
+        /* Grid of folders */
+        .folder-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 0.85rem;
+        }
+
+        .folder-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-left: 3px solid transparent;
+            border-radius: 12px;
+            padding: 1rem 1.15rem;
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            transition: all 0.25s ease;
+        }
+
+        .folder-card:hover {
+            background: var(--bg-hover);
+            border-color: rgba(201, 162, 39, 0.35);
+            border-left-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        }
+
+        .folder-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(201, 162, 39, 0.12);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.25rem;
+        }
+
+        .folder-name {
+            font-size: 0.92rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            line-height: 1.35;
+        }
+
+        /* Categories */
+        .category {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2.2rem 1.5rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            background: linear-gradient(to top, #0c1015, transparent);
+        }
+
+        .footer strong {
+            color: var(--accent);
+        }
+
+        /* Stats */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.75rem 0 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+            background: rgba(201, 162, 39, 0.06);
+            border: 1px solid rgba(201, 162, 39, 0.15);
+            border-radius: 12px;
+            padding: 0.9rem 1.4rem;
+            min-width: 110px;
+        }
+
+        .stat-number {
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin-top: 0.2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .header {
+                padding: 2rem 1rem;
+            }
+            .contact-banner {
+                margin: 1.5rem 1rem;
+                padding: 1.5rem 1rem;
+            }
+            .folder-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <img src="logo-kit.png" alt="Logo Kit Jurídico" class="logo">
+        <div class="logo-divider"></div>
+        <div class="badge">🎁 Regalo Exclusivo</div>
+        <h1>Kit <span>Jurídico</span> Formatos</h1>
+        <p>Colección completa de modelos, formatos y recursos jurídicos.<br>Beneficio exclusivo por adquirir el <strong>Kit Buscador</strong>.</p>
+        
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">60+</div>
+                <div class="stat-label">Carpetas</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Actualizado</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">Word + PDF</div>
+                <div class="stat-label">Listos para usar</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Banner -->
+    <div class="contact-banner">
+        <h2>🔒 Acceso restringido</h2>
+        <p>Este menú muestra el contenido completo del kit.<br>
+        Para <strong>obtener acceso a los archivos</strong> y poder descargarlos, contáctame:</p>
+        
+        <div class="contact-buttons">
+            <a href="https://wa.me/529992318603" target="_blank" class="btn btn-whatsapp">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                WhatsApp: 999 231 8603
+            </a>
+            <a href="mailto:Hcomputo@gmail.com" class="btn btn-email">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                Hcomputo@gmail.com
+            </a>
+        </div>
+        <p class="contact-note">Al contactarme, indícame el <strong>correo electrónico</strong> con el que deseas recibir el acceso.</p>
+    </div>
+
+    <!-- Content -->
+    <main class="container">
+
+        <!-- Modelos -->
+        <div class="category">
+            <h2 class="section-title">📁 Modelos y Formatos</h2>
+            <div class="folder-grid">
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos alimentos</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos de audiencia</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos de carta poder</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos de certificado</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos de Contestación</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos de declaración</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos de denuncia de robo y daños en propiedad privada</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos de devolución</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos de dictamen</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos de interrogatorio</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos de juicio laboral</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos de liquidación</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos de querella</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos de recurso</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos de testamento</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos en materia agraria</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos en materia fiscal</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Solicitud para requerir alimentos</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Solicitud para requerir copias certificadas</div></div>
+            </div>
+        </div>
+
+        <!-- Juicios -->
+        <div class="category">
+            <h2 class="section-title">⚖️ Juicios</h2>
+            <div class="folder-grid">
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Juicio de arrendamiento</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Juicio de filiación</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Juicio de patria potestad</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Juicio de Usucapión</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Juicio ejecutivo mercantil</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Juicio mercantil</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Juicio sucesorio</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Sucesión intestamentaria</div></div>
+            </div>
+        </div>
+
+        <!-- Contratos -->
+        <div class="category">
+            <h2 class="section-title">📝 Contratos</h2>
+            <div class="folder-grid">
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Contratos</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Contratos civiles</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Contratos laborales</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Contratos Mercantiles</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Sociedades mercantiles</div></div>
+            </div>
+        </div>
+
+        <!-- Demandas y Escritos -->
+        <div class="category">
+            <h2 class="section-title">📋 Demandas, Denuncias y Escritos</h2>
+            <div class="folder-grid">
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Demandas</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Demandas Civiles</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Denuncias</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Denuncias y querellas</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Escritos</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Escritos solicitando abrir el juicio</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Alegatos</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Agravios</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Apelación</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Desistimientos</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Promociones</div></div>
+            </div>
+        </div>
+
+        <!-- Amparo y Constitucional -->
+        <div class="category">
+            <h2 class="section-title">🛡️ Amparo y Constitucional</h2>
+            <div class="folder-grid">
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Amparo</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Amparo segunda parte</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Constitucional</div></div>
+            </div>
+        </div>
+
+        <!-- Penal -->
+        <div class="category">
+            <h2 class="section-title">⚖️ Materia Penal</h2>
+            <div class="folder-grid">
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Penal</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Práctica forense de juicio oral penal</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Pruebas en el proceso penal acusatorio</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Pruebas en el sistema penal acusatorio</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Medios alternativos en la rama penal</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Etapa Intermedia</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Audiencia de juicio oral 1a parte</div></div>
+            </div>
+        </div>
+
+        <!-- Otras materias -->
+        <div class="category">
+            <h2 class="section-title">📚 Otras Materias</h2>
+            <div class="folder-grid">
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Administrativo</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Agrario</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Fiscal</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Laboral</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Alimentos parte 2</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Divorcios</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Deudores</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Jurisdicción voluntaria</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Actas de asamblea</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Acuerdos</div></div>
+            </div>
+        </div>
+
+        <!-- Libros y Recursos -->
+        <div class="category">
+            <h2 class="section-title">📖 Libros y Recursos</h2>
+            <div class="folder-grid">
+                <div class="folder-card"><div class="folder-icon">📚</div><div class="folder-name">LIBROS JURÍDICOS</div></div>
+                <div class="folder-card"><div class="folder-icon">📚</div><div class="folder-name">Libros actualización</div></div>
+                <div class="folder-card"><div class="folder-icon">📚</div><div class="folder-name">Jurisprudencia</div></div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Material exclusivo para compradores del <strong>Kit Buscador</strong></p>
+        <p style="margin-top: 0.5rem;">Para acceso completo → WhatsApp <strong>999 231 8603</strong> · <strong>Hcomputo@gmail.com</strong></p>
+    </footer>
+
+</body>
+</html>
