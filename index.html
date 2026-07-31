@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOF Buscador – Guía de Funciones</title>
+    <title>Kit Jurídico – Regalo Exclusivo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -19,6 +19,7 @@
             --text-secondary: #a0aec0;
             --text-muted: #718096;
             --border: #2d3a4d;
+            --success: #38a169;
             --whatsapp: #25d366;
         }
 
@@ -32,13 +33,13 @@
             font-family: 'Inter', system-ui, sans-serif;
             background: var(--bg-primary);
             color: var(--text-primary);
-            line-height: 1.7;
+            line-height: 1.6;
             min-height: 100vh;
-            animation: fadeIn 0.6s ease-out;
+            animation: fadeIn 0.7s ease-out;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(12px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -46,9 +47,10 @@
         .header {
             background: linear-gradient(135deg, #1a2332 0%, #0f1419 100%);
             border-bottom: 1px solid var(--border);
-            padding: 2.8rem 1.5rem 2.2rem;
+            padding: 3rem 1.5rem 2.3rem;
             text-align: center;
             position: relative;
+            overflow: hidden;
         }
 
         .header::before {
@@ -62,39 +64,47 @@
         }
 
         .logo {
-            width: 160px;
+            width: 230px;
             height: auto;
             margin: 0 auto 1.2rem;
             display: block;
-            filter: drop-shadow(0 6px 20px rgba(201, 162, 39, 0.35));
+            filter: drop-shadow(0 8px 26px rgba(201, 162, 39, 0.42));
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.03);
+            filter: drop-shadow(0 10px 30px rgba(201, 162, 39, 0.55));
         }
 
         .logo-divider {
-            width: 70px;
+            width: 80px;
             height: 2px;
             background: linear-gradient(90deg, transparent, var(--accent), transparent);
-            margin: 0 auto 1.3rem;
+            margin: 0 auto 1.4rem;
+            border-radius: 2px;
         }
 
         .badge {
             display: inline-block;
             background: rgba(201, 162, 39, 0.15);
             color: var(--accent);
-            font-size: 0.72rem;
+            font-size: 0.75rem;
             font-weight: 600;
-            letter-spacing: 1.4px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            padding: 0.3rem 0.9rem;
+            padding: 0.35rem 1rem;
             border-radius: 50px;
             border: 1px solid rgba(201, 162, 39, 0.3);
-            margin-bottom: 0.9rem;
+            margin-bottom: 1rem;
         }
 
         .header h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(1.7rem, 4.5vw, 2.4rem);
+            font-size: clamp(1.8rem, 5vw, 2.6rem);
             font-weight: 700;
-            margin-bottom: 0.4rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
         }
 
         .header h1 span {
@@ -104,158 +114,353 @@
         .header p {
             color: var(--text-secondary);
             font-size: 1.05rem;
-            max-width: 580px;
+            max-width: 600px;
             margin: 0 auto;
         }
 
-        /* Container */
-        .container {
+        /* Contact Banner */
+        .contact-banner {
+            background: linear-gradient(145deg, #1a3229 0%, #152820 100%);
+            border: 1px solid rgba(37, 211, 102, 0.28);
+            border-radius: 18px;
+            padding: 2rem 1.75rem;
+            margin: 2.2rem auto;
             max-width: 900px;
-            margin: 0 auto;
-            padding: 2.5rem 1.5rem 4rem;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
         }
 
-        /* Section */
-        .section {
+        .contact-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(37, 211, 102, 0.5), transparent);
+        }
+
+        .contact-banner h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            color: var(--text-primary);
+        }
+
+        .contact-banner > p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.4rem;
+            line-height: 1.55;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-whatsapp {
+            background: var(--whatsapp);
+            color: #fff;
+        }
+
+        .btn-whatsapp:hover {
+            background: #1da851;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-email {
             background: var(--bg-card);
+            color: var(--text-primary);
             border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 1.8rem 1.7rem;
-            margin-bottom: 1.5rem;
-            transition: border-color 0.25s ease;
         }
 
-        .section:hover {
-            border-color: rgba(201, 162, 39, 0.35);
+        .btn-email:hover {
+            background: var(--bg-hover);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .contact-note {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem 3rem;
         }
 
         .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: 1.35rem;
+            font-size: 1.5rem;
             font-weight: 600;
-            color: var(--accent);
-            margin-bottom: 1rem;
+            margin: 2.5rem 0 1.25rem;
+            color: var(--text-primary);
             display: flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.75rem;
         }
 
-        .section p {
-            color: var(--text-secondary);
-            margin-bottom: 0.9rem;
-            font-size: 0.98rem;
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--border), transparent);
         }
 
-        .section p:last-child {
-            margin-bottom: 0;
+        /* Grid of folders */
+        .folder-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 0.85rem;
         }
 
-        .section ul {
-            list-style: none;
-            padding: 0;
+        .folder-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-left: 3px solid transparent;
+            border-radius: 12px;
+            padding: 1rem 1.15rem;
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            transition: all 0.25s ease;
         }
 
-        .section ul li {
-            position: relative;
-            padding-left: 1.4rem;
-            margin-bottom: 0.55rem;
-            color: var(--text-secondary);
-            font-size: 0.97rem;
+        .folder-card:hover {
+            background: var(--bg-hover);
+            border-color: rgba(201, 162, 39, 0.35);
+            border-left-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
         }
 
-        .section ul li::before {
-            content: '▸';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: 600;
+        .folder-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(201, 162, 39, 0.12);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.25rem;
         }
 
-        /* Highlight box */
-        .highlight {
-            background: linear-gradient(145deg, #1a3229 0%, #152820 100%);
-            border: 1px solid rgba(37, 211, 102, 0.25);
-            border-radius: 14px;
-            padding: 1.5rem 1.6rem;
-            margin: 2rem 0;
+        .folder-name {
+            font-size: 0.92rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            line-height: 1.35;
         }
 
-        .highlight h3 {
-            color: #4ade80;
-            font-size: 1.1rem;
-            margin-bottom: 0.6rem;
-        }
-
-        .highlight p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            margin: 0;
+        /* Categories */
+        .category {
+            margin-bottom: 0.5rem;
         }
 
         /* Footer */
         .footer {
             text-align: center;
-            padding: 2rem 1.5rem;
+            padding: 2.2rem 1.5rem;
             border-top: 1px solid var(--border);
             color: var(--text-muted);
             font-size: 0.85rem;
+            background: linear-gradient(to top, #0c1015, transparent);
         }
 
         .footer strong {
             color: var(--accent);
         }
 
-        /* Subsections within Funciones */
-        .subsection-title {
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: var(--accent-light);
-            margin: 1.8rem 0 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .subsection-title:first-of-type {
-            margin-top: 0;
-        }
-
-        /* Numbered function list */
-        .numbered-list {
-            list-style: none;
-            padding: 0;
-            counter-reset: fn;
-        }
-
-        .numbered-list li {
-            counter-increment: fn;
-            position: relative;
-            padding-left: 2.5rem;
-            margin-bottom: 0.85rem;
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-        }
-
-        .numbered-list li::before {
-            content: counter(fn);
-            position: absolute;
-            left: 0;
-            top: 0.05rem;
-            width: 1.6rem;
-            height: 1.6rem;
-            background: rgba(201, 162, 39, 0.14);
-            border: 1px solid rgba(201, 162, 39, 0.4);
-            border-radius: 50%;
-            color: var(--accent-light);
-            font-size: 0.72rem;
-            font-weight: 700;
+        /* Stats */
+        .stats {
             display: flex;
-            align-items: center;
             justify-content: center;
+            gap: 1.5rem;
+            margin: 1.75rem 0 0.5rem;
+            flex-wrap: wrap;
         }
 
-        .numbered-list li strong {
-            color: var(--text-primary);
+        .stat {
+            text-align: center;
+            background: rgba(201, 162, 39, 0.06);
+            border: 1px solid rgba(201, 162, 39, 0.15);
+            border-radius: 12px;
+            padding: 0.9rem 1.4rem;
+            min-width: 110px;
+        }
+
+        .stat-number {
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin-top: 0.2rem;
+        }
+
+        /* Derechos Estatales */
+        .rights-banner {
+            background: linear-gradient(145deg, #1a2e1f 0%, #14231a 100%);
+            border: 1px solid rgba(56, 161, 105, 0.32);
+            border-radius: 18px;
+            padding: 2.2rem 1.75rem 2rem;
+            margin: 2.2rem auto 0;
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .rights-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(56, 161, 105, 0.5), transparent);
+        }
+
+        .rights-banner h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
             font-weight: 600;
+            margin-bottom: 1.2rem;
+            color: var(--text-primary);
+        }
+
+        .rights-badge {
+            width: 150px;
+            height: auto;
+            margin: 0 auto 1.3rem;
+            display: block;
+            filter: drop-shadow(0 8px 22px rgba(56, 161, 105, 0.35));
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .rights-badge:hover {
+            transform: scale(1.04);
+            filter: drop-shadow(0 10px 28px rgba(56, 161, 105, 0.5));
+        }
+
+        .rights-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: var(--success);
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.98rem;
+            text-decoration: none;
+            padding: 0.8rem 1.75rem;
+            border-radius: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .rights-link:hover {
+            background: #2f8a5a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(56, 161, 105, 0.32);
+        }
+
+        /* Service Banner - Jurisprudencia */
+        .service-banner {
+            background: linear-gradient(145deg, #2e2410 0%, #221b0c 100%);
+            border: 1px solid rgba(201, 162, 39, 0.4);
+            border-radius: 18px;
+            padding: 2.2rem 1.75rem;
+            margin: 2.2rem auto 0;
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .service-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 162, 39, 0.6), transparent);
+        }
+
+        .service-banner .badge {
+            margin-bottom: 1rem;
+        }
+
+        .service-banner h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .service-banner p {
+            color: var(--text-secondary);
+            font-size: 0.98rem;
+            max-width: 640px;
+            margin: 0 auto 0.9rem;
+            line-height: 1.65;
+        }
+
+        .service-banner p:last-of-type {
+            margin-bottom: 1.4rem;
+        }
+
+        .service-cost-tag {
+            display: inline-block;
+            font-size: 0.8rem;
+            color: var(--accent-light);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin-bottom: 1.4rem;
+        }
+
+        .btn-gold {
+            background: var(--accent);
+            color: #1a1508;
+        }
+
+        .btn-gold:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(201, 162, 39, 0.35);
         }
 
         /* Responsive */
@@ -263,8 +468,16 @@
             .header {
                 padding: 2rem 1rem;
             }
-            .section {
-                padding: 1.4rem 1.2rem;
+            .contact-banner {
+                margin: 1.5rem 1rem;
+                padding: 1.5rem 1rem;
+            }
+            .service-banner {
+                margin: 1.5rem 1rem 0;
+                padding: 1.5rem 1rem;
+            }
+            .folder-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -273,187 +486,220 @@
 
     <!-- Header -->
     <header class="header">
-        <img src="logo-kit.png" alt="Logo" class="logo" onerror="this.style.display='none'">
+        <img src="logo-kit.png" alt="Logo Kit Jurídico" class="logo">
         <div class="logo-divider"></div>
-        <div class="badge">Guía de Funciones</div>
-        <h1>DOF <span>Buscador</span></h1>
-        <p>Herramienta profesional para la consulta y revisión del Diario Oficial del Gobierno del Estado de Yucatán</p>
+        <div class="badge">🎁 Regalo Exclusivo</div>
+        <h1>Kit <span>Jurídico</span> Formatos</h1>
+        <p>Colección completa de modelos, formatos y recursos jurídicos.<br>Beneficio exclusivo por adquirir el <strong>Kit Buscador</strong>.</p>
+        
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">60+</div>
+                <div class="stat-label">Carpetas</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Actualizado</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">Word + PDF</div>
+                <div class="stat-label">Listos para usar</div>
+            </div>
+        </div>
     </header>
 
+    <!-- Derechos Estatales -->
+    <div class="rights-banner">
+        <h2>🔗 Derechos Estatales</h2>
+        <img src="derechos-estatales-badge.png" alt="Derechos Estatales" class="rights-badge">
+        <a href="https://hcomputo.github.io/Derechos-estatales/" target="_blank" class="rights-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10 13a5 5 0 007.07 0l2.83-2.83a5 5 0 00-7.07-7.07l-1.72 1.71"/>
+                <path d="M14 11a5 5 0 00-7.07 0l-2.83 2.83a5 5 0 007.07 7.07l1.71-1.71"/>
+            </svg>
+            Consulta la lista de Los derechos aquí
+        </a>
+    </div>
+
+    <!-- Contact Banner -->
+    <div class="contact-banner">
+        <h2>🔒 Acceso restringido</h2>
+        <p>Este menú muestra el contenido completo del kit.<br>
+        Para <strong>obtener acceso a los archivos</strong> y poder descargarlos, contáctame:</p>
+        
+        <div class="contact-buttons">
+            <a href="https://wa.me/529992318603" target="_blank" class="btn btn-whatsapp">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                WhatsApp: 999 231 8603
+            </a>
+            <a href="mailto:Hcomputo@gmail.com" class="btn btn-email">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                Hcomputo@gmail.com
+            </a>
+        </div>
+        <p class="contact-note">Al contactarme, indícame el <strong>correo electrónico</strong> con el que deseas recibir el acceso.</p>
+    </div>
+
+    <!-- Service Banner - Jurisprudencia -->
+    <div class="service-banner">
+        <div class="badge">⚖️ Servicio Especializado</div>
+        <h2>¿Necesitas jurisprudencia o tesis para tus escritos?</h2>
+        <p>Si requiere jurisprudencia o tesis para fundamentar sus escritos y no cuenta con el tiempo o la certeza de cuál resulta aplicable, puedo asistirle.</p>
+        <p>Ofrezco un servicio especializado de búsqueda, selección y adaptación de jurisprudencia, así como la redacción técnica necesaria para integrar correctamente los fundamentos en demandas, juicios, recursos y demás escritos jurídicos.</p>
+        <p class="service-cost-tag">Servicio personalizado · Costo adicional</p>
+        <div class="contact-buttons">
+            <a href="https://wa.me/529992318603" target="_blank" class="btn btn-gold">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                Consultar este servicio
+            </a>
+            <a href="mailto:Hcomputo@gmail.com" class="btn btn-email">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                Hcomputo@gmail.com
+            </a>
+        </div>
+    </div>
+
+    <!-- Content -->
     <main class="container">
 
-        <!-- Descripción -->
-        <div class="section">
-            <h2 class="section-title">📋 Descripción</h2>
-            <p>DOF Buscador es una herramienta diseñada para facilitar la consulta y revisión del Diario Oficial del Gobierno del Estado de Yucatán. El programa permite buscar nombres de personas, empresas, instituciones y números de expediente dentro de las publicaciones oficiales, evitando que el usuario tenga que revisar manualmente cada página del documento.</p>
-            <p>Sus búsquedas son 100% confiables: puedes localizar información por el nombre de tus clientes o, para mayor precisión, por número de expediente. Cada resultado se presenta de forma ordenada, mostrando la información más relevante de la publicación, como la autoridad que publica, el número de expediente, la fecha de audiencia, la fecha de publicación, la página del Diario Oficial y un extracto del texto relacionado.</p>
-            <p>Además, desde el propio programa puedes consultar y descargar cualquier ley, código, reglamento o decreto federal y estatal, así como revisar criterios de jurisprudencia y tesis necesarios para fundamentar correctamente tus demandas, contestaciones, recursos o cualquier otro escrito. Cuentas también con la herramienta de Expedientes, que concentra en un solo lugar la información que normalmente tendrías en tus archivos físicos, acceso a más de 10,000 formatos jurídicos organizados por categoría, y un calendario jurídico que te avisará en la fecha y hora exacta de tus citas y audiencias.</p>
-            <p>Aprovecha esta oportunidad de modernizar y actualizar tu despacho con una herramienta que, sin duda, te será de gran utilidad.</p>
-            <p style="margin-top: 1.3rem;"><a href="https://hcomputo.github.io/Instalador-dof-buscador/" style="color: var(--accent); font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(201,162,39,0.4);">Da clic en este enlace para descargar e instalar</a>, si aún no lo has hecho.</p>
+        <!-- Modelos -->
+        <div class="category">
+            <h2 class="section-title">📁 Modelos y Formatos</h2>
+            <div class="folder-grid">
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos alimentos</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos de audiencia</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos de carta poder</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos de certificado</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos de Contestación</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos de declaración</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos de denuncia de robo y daños en propiedad privada</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos de devolución</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos de dictamen</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos de interrogatorio</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos de juicio laboral</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos de liquidación</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos de querella</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos de recurso</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos de testamento</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos en materia agraria</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Modelos en materia fiscal</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Solicitud para requerir alimentos</div></div>
+                <div class="folder-card"><div class="folder-icon">📄</div><div class="folder-name">Solicitud para requerir copias certificadas</div></div>
+            </div>
         </div>
 
-        <!-- Finalidad -->
-        <div class="section">
-            <h2 class="section-title">🎯 Finalidad</h2>
-            <p>La finalidad de DOF Buscador es ayudar a identificar oportunamente publicaciones judiciales y administrativas que puedan ser relevantes para el usuario.</p>
-            <p>El programa busca reducir el tiempo dedicado a revisar extensos documentos en formato PDF, disminuir el riesgo de pasar por alto una publicación importante y facilitar el seguimiento de expedientes, personas o asuntos jurídicos de interés.</p>
-            <p>DOF Buscador funciona como una herramienta de apoyo para la revisión documental. Los resultados pueden consultarse inmediatamente, guardarse en el historial, exportarse en formato PDF y compartirse cuando el usuario lo considere necesario.</p>
+        <!-- Juicios -->
+        <div class="category">
+            <h2 class="section-title">⚖️ Juicios</h2>
+            <div class="folder-grid">
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Juicio de arrendamiento</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Juicio de filiación</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Juicio de patria potestad</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Juicio de Usucapión</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Juicio ejecutivo mercantil</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Juicio mercantil</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Juicio sucesorio</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Sucesión intestamentaria</div></div>
+            </div>
         </div>
 
-        <!-- A quién está dirigido -->
-        <div class="section">
-            <h2 class="section-title">👥 ¿A quién está dirigido?</h2>
-            <p>DOF Buscador está dirigido principalmente a:</p>
-            <ul>
-                <li>Abogados y despachos jurídicos</li>
-                <li>Pasantes y estudiantes de Derecho</li>
-                <li>Gestores y auxiliares jurídicos</li>
-                <li>Empresas que requieren dar seguimiento a procedimientos</li>
-                <li>Instituciones, asociaciones y profesionistas</li>
-                <li>Personas que necesitan revisar si su nombre o expediente aparece publicado en el Diario Oficial</li>
-            </ul>
-            <p style="margin-top: 1rem;">No es necesario contar con conocimientos de programación. Su interfaz fue diseñada para que cualquier usuario pueda configurar sus criterios de búsqueda y utilizar las funciones principales de manera sencilla.</p>
+        <!-- Contratos -->
+        <div class="category">
+            <h2 class="section-title">📝 Contratos</h2>
+            <div class="folder-grid">
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Contratos</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Contratos civiles</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Contratos laborales</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Contratos Mercantiles</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Sociedades mercantiles</div></div>
+            </div>
         </div>
 
-        <!-- Beneficios -->
-        <div class="section">
-            <h2 class="section-title">✨ Beneficios de utilizar DOF Buscador</h2>
-            <p>DOF Buscador permite realizar en pocos minutos una revisión que manualmente podría requerir mucho más tiempo. El usuario puede registrar nombres o números de expediente y dejar que el programa localice las coincidencias dentro del Diario Oficial.</p>
-            <p>Entre sus principales beneficios se encuentran la rapidez de búsqueda, la presentación inmediata de resultados, la conservación del historial y la posibilidad de consultar nuevamente las publicaciones encontradas sin repetir todo el proceso.</p>
-            <p>También permite realizar búsquedas históricas por fecha, identificar datos relevantes dentro de cada publicación y conservar un registro organizado de las revisiones efectuadas.</p>
+        <!-- Demandas y Escritos -->
+        <div class="category">
+            <h2 class="section-title">📋 Demandas, Denuncias y Escritos</h2>
+            <div class="folder-grid">
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Demandas</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Demandas Civiles</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Denuncias</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Denuncias y querellas</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Escritos</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Escritos solicitando abrir el juicio</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Alegatos</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Agravios</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Apelación</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Desistimientos</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Promociones</div></div>
+            </div>
         </div>
 
-        <!-- Ventajas -->
-        <div class="section">
-            <h2 class="section-title">⚡ Ventajas</h2>
-            <p>Una de sus principales ventajas es que no se limita a localizar una palabra aislada. Su sistema de búsqueda fue reforzado para reconocer nombres, apellidos, denominaciones y números de expediente dentro de distintos formatos de publicación.</p>
-            <p>Los resultados se presentan de manera clara y estructurada, indicando:</p>
-            <ul>
-                <li>Coincidencia encontrada</li>
-                <li>Personas relacionadas</li>
-                <li>Autoridad que publica</li>
-                <li>Número de expediente</li>
-                <li>Fecha de audiencia</li>
-                <li>Fecha de publicación</li>
-                <li>Página del Diario Oficial</li>
-                <li>Archivo revisado</li>
-                <li>Extracto de la notificación</li>
-            </ul>
-            <p style="margin-top: 1rem;">El programa también cuenta con historial de búsquedas, consulta de publicaciones anteriores, generación de documentos PDF, herramientas jurídicas complementarias y enlaces actualizables al calendario judicial, Bonus Pack y guía completa de funciones.</p>
+        <!-- Amparo y Constitucional -->
+        <div class="category">
+            <h2 class="section-title">🛡️ Amparo y Constitucional</h2>
+            <div class="folder-grid">
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Amparo</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Amparo segunda parte</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Constitucional</div></div>
+            </div>
         </div>
 
-        <!-- Seguridad -->
-        <div class="section">
-            <h2 class="section-title">🔒 Seguridad y privacidad</h2>
-            <p>DOF Buscador ha sido desarrollado para funcionar de manera local en la computadora del usuario. El programa no recopila, registra ni envía información personal a servidores externos.</p>
-            <p>Los nombres configurados, expedientes, resultados, historial, documentos descargados y demás información generada durante su uso permanecen almacenados en la propia computadora. Estos datos solo se comparten cuando el usuario decide voluntariamente exportarlos, imprimirlos, enviarlos por correo o transferirlos mediante alguna de las funciones disponibles.</p>
-            <p>La configuración de correo es opcional. Cuando se utiliza, los datos permanecen guardados localmente y son empleados únicamente para realizar los envíos solicitados por el usuario.</p>
-            <p>La versión distribuida de DOF Buscador se entrega limpia, sin nombres, historiales, correos, licencias ni documentos pertenecientes a otros usuarios. Asimismo, el instalador ha sido generado exclusivamente con los archivos necesarios para el funcionamiento del programa y verificado antes de su distribución.</p>
+        <!-- Penal -->
+        <div class="category">
+            <h2 class="section-title">⚖️ Materia Penal</h2>
+            <div class="folder-grid">
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Penal</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Práctica forense de juicio oral penal</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Pruebas en el proceso penal acusatorio</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Pruebas en el sistema penal acusatorio</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Medios alternativos en la rama penal</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Etapa Intermedia</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Audiencia de juicio oral 1a parte</div></div>
+            </div>
         </div>
 
-        <!-- Funciones -->
-        <div class="section">
-            <h2 class="section-title">🛠️ Estas son las funciones que hace el programa</h2>
-            <p>A continuación se detalla, de manera organizada, cada una de las funciones que integran DOF Buscador:</p>
+        <!-- Otras materias -->
+        <div class="category">
+            <h2 class="section-title">📚 Otras Materias</h2>
+            <div class="folder-grid">
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Administrativo</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Agrario</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Fiscal</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Laboral</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Alimentos parte 2</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Divorcios</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Deudores</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Jurisdicción voluntaria</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Actas de asamblea</div></div>
+                <div class="folder-card"><div class="folder-icon">📂</div><div class="folder-name">Acuerdos</div></div>
+            </div>
+        </div>
 
-            <h3 class="subsection-title">🔎 Búsqueda y criterios</h3>
-            <ol class="numbered-list">
-                <li><strong>Búsqueda del Diario Oficial del día.</strong> Descarga y revisa las ediciones disponibles del Diario Oficial del Gobierno del Estado de Yucatán correspondientes a la fecha actual.</li>
-                <li><strong>Búsqueda por fecha anterior.</strong> Permite seleccionar una fecha específica para revisar publicaciones históricas del Diario Oficial.</li>
-                <li><strong>Búsqueda de nombres completos.</strong> Localiza nombres de personas dentro de las publicaciones oficiales, aun cuando aparezcan acompañados de otros nombres o datos jurídicos.</li>
-                <li><strong>Búsqueda por apellidos o partes del nombre.</strong> Permite configurar criterios más breves, como uno o varios apellidos, para localizar posibles coincidencias.</li>
-                <li><strong>Búsqueda de empresas, instituciones y denominaciones.</strong> Puede buscar nombres de bancos, sociedades, dependencias, asociaciones y otras personas morales.</li>
-                <li><strong>Búsqueda por número de expediente.</strong> Localiza números de expediente dentro del Diario Oficial, incluyendo formatos como 450/2025 o 00819/2023.</li>
-                <li><strong>Búsqueda mediante varios criterios.</strong> Permite registrar simultáneamente distintos nombres, empresas y números de expediente para revisarlos en una sola ejecución.</li>
-                <li><strong>Administración de criterios de búsqueda.</strong> El usuario puede agregar, consultar y eliminar nombres o expedientes sin editar archivos manualmente.</li>
-                <li><strong>Detección reforzada de coincidencias.</strong> El sistema considera diferencias de mayúsculas, minúsculas, acentos y distintos formatos de publicación.</li>
-                <li><strong>Revisión de varias ediciones de una misma fecha.</strong> Si el Diario Oficial publica más de una edición, el programa puede revisarlas dentro del mismo proceso.</li>
-            </ol>
-
-            <h3 class="subsection-title">📄 Resultados e identificación de información</h3>
-            <ol class="numbered-list">
-                <li><strong>Presentación inmediata de resultados.</strong> Al terminar la búsqueda, muestra directamente las coincidencias encontradas sin obligar al usuario a abrir otra sección.</li>
-                <li><strong>Identificación de la coincidencia localizada.</strong> Indica claramente qué nombre, denominación o número de expediente fue encontrado.</li>
-                <li><strong>Identificación de personas relacionadas.</strong> Muestra los nombres de otras personas que aparecen vinculadas dentro del mismo extracto.</li>
-                <li><strong>Identificación de la autoridad que publica.</strong> Detecta el juzgado, tribunal, sala o autoridad responsable de la publicación.</li>
-                <li><strong>Identificación del número de expediente.</strong> Extrae y presenta el expediente relacionado con la coincidencia.</li>
-                <li><strong>Detección de otros números judiciales.</strong> Puede identificar datos como toca, exhorto, amparo, expediente auxiliar, expedientillo o acumulado cuando aparecen en la publicación.</li>
-                <li><strong>Identificación de la fecha de audiencia.</strong> Localiza y muestra la fecha de audiencia señalada en la notificación.</li>
-                <li><strong>Identificación de la fecha de publicación.</strong> Presenta la fecha exacta del Diario Oficial revisado.</li>
-                <li><strong>Identificación de la página.</strong> Indica el número de página del PDF donde se encontró la coincidencia.</li>
-                <li><strong>Identificación del archivo revisado.</strong> Muestra el nombre del PDF del Diario Oficial en el que se localizó el resultado.</li>
-                <li><strong>Generación de extractos de la notificación.</strong> Presenta un fragmento amplio del texto relacionado para facilitar su revisión jurídica.</li>
-            </ol>
-
-            <h3 class="subsection-title">🗂️ Historial y gestión de resultados</h3>
-            <ol class="numbered-list">
-                <li><strong>Historial de ejecuciones.</strong> Conserva un registro de las búsquedas realizadas, con fecha, hora, Diario revisado, coincidencias y estado del correo.</li>
-                <li><strong>Consulta de detalles del historial.</strong> Permite seleccionar una ejecución anterior y revisar nuevamente todos sus resultados.</li>
-                <li><strong>Eliminación individual del historial.</strong> El usuario puede seleccionar y eliminar únicamente el registro que desee, sin borrar el resto.</li>
-                <li><strong>Conservación local de resultados.</strong> Los resultados permanecen guardados en la computadora para consultarlos posteriormente.</li>
-                <li><strong>Generación de historial en PDF.</strong> Permite guardar los resultados o el historial en formato PDF.</li>
-                <li><strong>Impresión de resultados.</strong> Los documentos generados pueden abrirse e imprimirse cuando sea necesario.</li>
-            </ol>
-
-            <h3 class="subsection-title">✉️ Correo electrónico</h3>
-            <ol class="numbered-list">
-                <li><strong>Configuración opcional de correo.</strong> El programa funciona normalmente aunque el usuario no configure una cuenta de correo.</li>
-                <li><strong>Compatibilidad con Gmail.</strong> Permite configurar cuentas de Gmail mediante contraseña de aplicación.</li>
-                <li><strong>Compatibilidad con Outlook y Hotmail.</strong> Incluye configuración automática e instrucciones para utilizar estos proveedores.</li>
-                <li><strong>Guardado independiente del correo remitente.</strong> El botón Guardar remitente conserva únicamente la cuenta, el proveedor y la contraseña de aplicación.</li>
-                <li><strong>Administración independiente de destinatarios.</strong> Los destinatarios se agregan, eliminan y guardan mediante sus propios botones.</li>
-                <li><strong>Envío a varios destinatarios.</strong> Los resultados pueden enviarse automáticamente a todas las direcciones registradas.</li>
-                <li><strong>Envío de correo de prueba.</strong> Permite comprobar que el remitente, la contraseña y el servidor estén configurados correctamente.</li>
-                <li><strong>Eliminación completa del correo remitente.</strong> El botón Eliminar correo remitente borra la cuenta, la contraseña guardada y los destinatarios asociados.</li>
-                <li><strong>Almacenamiento seguro de la contraseña.</strong> La contraseña del correo se guarda mediante las Credenciales de Windows y no como texto visible dentro del programa.</li>
-                <li><strong>Funcionamiento sin correo.</strong> Cuando el correo no está configurado, la búsqueda se realiza y los resultados se conservan en el historial.</li>
-            </ol>
-
-            <h3 class="subsection-title">📅 Calendario y legislación</h3>
-            <ol class="numbered-list">
-                <li><strong>Calendario judicial.</strong> Abre el calendario de suspensión de labores en el navegador sin descargarlo automáticamente.</li>
-                <li><strong>Consulta de Legislación de Yucatán.</strong> Incluye Constitución Política, leyes, códigos y reglamentos expedidos por el Congreso del Estado.</li>
-                <li><strong>Búsqueda general dentro de la legislación.</strong> El buscador revisa simultáneamente las cuatro secciones para localizar una disposición.</li>
-                <li><strong>Visualización de información legislativa.</strong> Muestra decreto, fecha de publicación, última reforma, estado y disponibilidad del PDF.</li>
-                <li><strong>Eliminación de registros legislativos duplicados.</strong> Detecta títulos similares y conserva el registro oficial más completo.</li>
-                <li><strong>Apertura del PDF oficial de una ley.</strong> Permite abrir directamente el documento publicado por el Congreso cuando el enlace está disponible.</li>
-                <li><strong>Acceso a la página oficial de legislación.</strong> El usuario puede abrir la sección correspondiente del Congreso para realizar consultas adicionales.</li>
-                <li><strong>Acceso al catálogo oficial.</strong> Incluye un botón para entrar directamente al catálogo completo de disposiciones.</li>
-                <li><strong>Respaldo cuando no existe enlace directo al PDF.</strong> Si el portal no proporciona el vínculo, abre el catálogo oficial y copia el nombre de la disposición para facilitar la búsqueda.</li>
-            </ol>
-
-            <h3 class="subsection-title">🧰 Herramientas complementarias</h3>
-            <ol class="numbered-list">
-                <li><strong>Bonus Pack o Kit Jurídico.</strong> Abre una página con formatos, modelos y recursos jurídicos complementarios.</li>
-                <li><strong>Página de funciones completas.</strong> El logotipo de la pantalla principal abre una guía en línea con la explicación detallada del programa.</li>
-                <li><strong>Sección de créditos.</strong> Incluye un acceso visible a la información de autoría y desarrollo.</li>
-                <li><strong>Ventana Acerca de.</strong> Presenta información general sobre el programa, su finalidad y sus características.</li>
-            </ol>
-
-            <h3 class="subsection-title">🔐 Instalación, privacidad y seguridad</h3>
-            <ol class="numbered-list">
-                <li><strong>Sistema de activación por licencia.</strong> Solicita una licencia válida para habilitar el uso del programa en cada computadora.</li>
-                <li><strong>Instalación independiente.</strong> El usuario no necesita instalar Python, Visual Studio Code ni otras herramientas de desarrollo.</li>
-                <li><strong>Instalador limpio.</strong> Se distribuye sin nombres, historial, correos, contraseñas, licencias, expedientes ni PDF de otros usuarios.</li>
-                <li><strong>Privacidad local.</strong> Los nombres, expedientes, resultados, historial y configuraciones permanecen en la computadora del usuario.</li>
-                <li><strong>Sin recopilación de información personal.</strong> El programa no recopila ni envía datos del usuario a servidores propios.</li>
-                <li><strong>Control del usuario sobre sus datos.</strong> La información solo se comparte cuando el usuario decide enviarla, exportarla, imprimirla o copiarla.</li>
-                <li><strong>Actualización externa de contenidos.</strong> El calendario, el Bonus Pack y la página de funciones pueden actualizarse en GitHub sin modificar el instalador.</li>
-            </ol>
-
-            <h3 class="subsection-title">🖥️ Interfaz</h3>
-            <ol class="numbered-list">
-                <li><strong>Interfaz sencilla y organizada.</strong> Las funciones principales se encuentran separadas en botones y ventanas claramente identificadas.</li>
-                <li><strong>Estado de la búsqueda en pantalla.</strong> Muestra si el programa está listo, cuántos criterios están activos, cuántos expedientes se encuentran configurados y el estado del PDF.</li>
-                <li><strong>Mensajes claros de finalización.</strong> Informa si la búsqueda terminó correctamente, si encontró coincidencias y si el correo fue enviado o no estaba configurado.</li>
-            </ol>
+        <!-- Libros y Recursos -->
+        <div class="category">
+            <h2 class="section-title">📖 Libros y Recursos</h2>
+            <div class="folder-grid">
+                <div class="folder-card"><div class="folder-icon">📚</div><div class="folder-name">LIBROS JURÍDICOS</div></div>
+                <div class="folder-card"><div class="folder-icon">📚</div><div class="folder-name">Libros actualización</div></div>
+                <div class="folder-card"><div class="folder-icon">📚</div><div class="folder-name">Jurisprudencia</div></div>
+            </div>
         </div>
 
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
-        <p><strong>DOF Buscador</strong> · Guía de Funciones</p>
-        <p style="margin-top: 0.4rem;">Material exclusivo para usuarios del programa</p>
+        <p>Material exclusivo para compradores del <strong>Kit Buscador</strong></p>
+        <p style="margin-top: 0.5rem;">Para acceso completo → WhatsApp <strong>999 231 8603</strong> · <strong>Hcomputo@gmail.com</strong></p>
     </footer>
 
 </body>
